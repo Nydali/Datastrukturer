@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM and JavaScript</title>
+</head>
+<body>
+    <p id="paragraph">This is a simple HTML paragraph.</p>
+    <div id="content">This is a div container.</div>
+    <button id="btn">Click me</button>
+
+    <script>
+        // Retrieve DOM elements
+        var paragraphElement = document.getElementById("paragraph");
+        var divElement = document.getElementById("content");
+        var buttonElement = document.getElementById("btn");
+
+        // Write text to the HTML document
+        paragraphElement.textContent = "Changed text in the paragraph element.";
+        divElement.innerHTML = "<p>This is new content in the div container.</p>";
+
+        // Perform calculations, for example by listening for click on the button
+        buttonElement.addEventListener("click", function() {
+            var result = calculate(5, 10); // Call the calculate function defined earlier
+            divElement.innerHTML += "<p>The result of the calculation is: " + result + "</p>";
+        });
+
+        // Function that takes two numbers as parameters and performs a calculation
+        function calculate(num1, num2) {
+            return num1 * num2; // Example calculation (multiplication)
+        }
+    </script>
+</body>
+</html>
